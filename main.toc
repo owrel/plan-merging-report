@@ -1,0 +1,39 @@
+\contentsline {chapter}{\numberline {1}Introduction \& Background}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Background}{7}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}MAPF}{7}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}ASP}{8}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Solving MAPF with ASP}{9}{subsection.1.2.3}%
+\contentsline {subsubsection}{Format Encoding}{9}{section*.4}%
+\contentsline {subsubsection}{Solver encoding}{11}{section*.6}%
+\contentsline {section}{\numberline {1.3}Overview}{13}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Individual Path Finding}{14}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Formalization}{14}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Diversity and Distance}{15}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Computation}{17}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Naive IPF Computation}{17}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Base IPF computation}{19}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Filters}{21}{subsection.2.2.3}%
+\contentsline {chapter}{\numberline {3}Path Selection}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Heatmap}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Path Elimination}{25}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Using Global Heatmap}{26}{subsection.3.2.1}%
+\contentsline {subsubsection}{Eliminating paths using unique heatmap value}{27}{section*.19}%
+\contentsline {subsubsection}{Eliminating paths using GH threshold}{29}{section*.23}%
+\contentsline {subsubsection}{Eliminating paths using sums of heatmap value}{30}{section*.27}%
+\contentsline {subsection}{\numberline {3.2.2}Using conflicts}{31}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Path Selection}{32}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Towards a (partial) plan}{32}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Towards a subgraph}{34}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Evaluating approaches}{34}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4}(Partial) Solving}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Pre-computed paths}{38}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Subgraph}{39}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Subgraphs Extension Strategies}{40}{subsection.4.2.1}%
+\contentsline {subsubsection}{Corridor}{40}{section*.37}%
+\contentsline {subsubsection}{Diamond}{42}{section*.39}%
+\contentsline {chapter}{\numberline {5}Benchmarks \& Conclusion}{44}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Benchmarks}{44}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Global result}{44}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}}{44}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Conclusion}{44}{section.5.2}%

@@ -1,0 +1,149 @@
+\documentclass{report}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{mathbbol}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\usepackage[skip=4pt]{caption}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{relsize}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{multirow}
+\colorlet{lightgrey}{lightgray}
+\usepackage{colortbl}
+\usepackage[bibstyle=authoryear, style=numeric, citestyle=numeric-comp, backend=bibtex]{biblatex}
+\bibliography{bibliography/krr,bibliography/procs,local}
+
+% Begin Variables definition
+\newcommand\widthimg{12cm}
+
+\lstdefinestyle{mystyle}{
+    basicstyle=\ttfamily,
+    % frame=single,
+    breaklines,
+    columns=fullflexible,
+    breakindent=1.2em,
+    breakatwhitespace,
+    numbers=left, 
+    escapechar=|
+}
+
+\DeclareCaptionType{equ}[][]
+
+% End Variables definition
+
+
+
+
+
+\title{%
+\Huge{Conflict-based Plan Merging for Multi-agent Pathfinding}\\[0.2cm]
+\Large{Master Thesis}
+}
+\author{
+\\[1.5cm] \LARGE{Aurélien SIMON}
+\\[0.2cm] \small{Matrikel-Nr: 806567 }
+\\[1cm] \textbf{Supervisors}
+\\[0.2cm] Klaus Strauch 
+\\[0.2cm] Etienne Tignon
+\\[0.2cm] Torsten Schaub
+\\[2cm] \Large{Potsdam University}
+\\[0.4cm] Master Cognitive Systems: Language, Learning and Reasoning 
+\\[1cm]
+}
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\maketitle
+
+\pagenumbering{arabic} 
+
+\fancyhead{} % clear all header fields
+% \fancyfoot{} % clear all header fields
+
+% \fancyfoot{} % clear all footer fields
+\fancyhead[L]{Aurélien Simon}
+\fancyhead[R]{Potsdam University}
+
+\newpage
+
+\begin{abstract}
+    
+    In this Master's Thesis, we aim introduce an approach for Multi-Agent Pathfinding (MAPF) problems, an artificial intelligence problem with wide-ranging applications including GPS, video games, and traffic control. MAPF involves orchestrating multiple agents to navigate from initial positions to specific destinations while avoiding collisions. This study focuses on the "Plan Merging" approach, a three-step approach based on path conflicts designed to tackle MAPF problems. The three steps are designated Individual Path Finding, Path Selection and Solving. This master thesis demonstrates that in certain cases, our proposed approaches can outperform classical MAPF methods, especially for large instances. However, it also highlights the inherent limitations of our plan merging techniques, particularly in scenarios where obtaining a complete solution is challenging or not feasible.
+    \\[1cm]
+    \indent In dieser Masterarbeit wollen wir einen Ansatz für Multi-Agent Pathfinding (MAPF) Probleme vorstellen, ein Problem der künstlichen Intelligenz mit weitreichenden Anwendungen wie GPS, Videospiele und Verkehrssteuerung. Bei MAPF geht es darum, mehrere Agenten so zu koordinieren, dass sie von ihren Ausgangspositionen zu bestimmten Zielen navigieren und dabei Kollisionen vermeiden. Diese Studie konzentriert sich auf den "Plan Merging"-Ansatz, einen dreistufigen Ansatz, der auf Pfadkonflikten basiert und zur Lösung von MAPF-Problemen entwickelt wurde. Die drei Schritte werden als Individual Path Finding, Path Selection und Solving bezeichnet. Diese Masterarbeit zeigt, dass die von uns vorgeschlagenen Ansätze in bestimmten Fällen die klassischen MAPF-Methoden übertreffen können, insbesondere bei großen Instanzen. Sie zeigt aber auch die inhärenten Grenzen unserer Plan-Merging-Techniken auf, insbesondere in Szenarien, in denen eine vollständige Lösung schwierig oder nicht machbar ist.
+    
+\end{abstract}
+
+\newpage
+
+\indent \textbf{Declaration of originality} \\
+\noindent I confirm that the master's thesis I have submitted is my own original work. I have not utilized any external sources or aids except for the ones explicitly mentioned. In cases where I have incorporated verbatim passages from other works, I have duly acknowledged the source through proper citations. This work has not been previously submitted for any course or examination, nor has it been presented to any other authority for approval. \\[1cm]
+
+\indent \textbf{Eigenständigkeitserklärung} \\
+\noindent Ich versichere, dass ich die eingereichte Masterarbeit selbstständig verfasst habe. Ich habe keine externen Quellen oder Hilfsmittel verwendet, außer denen, die ausdrücklich genannt sind. In den Fällen, in denen ich wörtliche Passagen aus anderen Arbeiten übernommen habe, habe ich die Quelle durch ordnungsgemäße Zitate ordnungsgemäß angegeben. Diese Arbeit wurde weder für einen Kurs oder eine Prüfung eingereicht, noch wurde sie einer anderen Behörde zur Genehmigung vorgelegt. \\[2cm]
+
+
+
+\indent Signature/Unterschrift \\[1.2cm]
+
+\indent Place/Ort, Date/Datum
+
+\newpage
+\tableofcontents
+
+\listoffigures
+
+\lstlistoflistings
+\newpage
+
+
+% \setcounter{page}{1}
+% \fancyfoot[R]{\thepage}
+
+
+
+
+
+\chapter{Introduction \& Background}
+\input{section/introduction.tex}
+\input{section/background.tex}
+\input{section/overview.tex}
+
+\chapter{Individual Path Finding}
+\input{section/ipf.tex}
+
+\chapter{Path Selection}
+\input{section/pathselection.tex}
+
+
+\chapter{(Partial) Solving}
+\input{section/partialsolving.tex}
+
+\chapter{Benchmarks \& Conclusion}
+
+\input{section/benchmarks.tex}
+\input{section/conclusion.tex}
+
+
+\newpage
+
+
+\section*{References}
+\printbibliography[heading=none]
+
+\input{section/appendix.tex}
+\end{document}
