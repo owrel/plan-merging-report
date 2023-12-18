@@ -641,10 +641,59 @@
     \field{sortinit}{L}
     \field{sortinithash}{L}
     \field{pages}{365\bibrangedash 396}
-    \field{title}{Plan merging by reuse for multi-agent planning}
+    \field{title}{Plan Merging by reuse for multi-agent planning}
     \field{volume}{50}
     \field{journaltitle}{Applied Intelligence}
     \field{year}{2020}
+  \endentry
+
+  \entry{ma2017feasibility}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=MH}{%
+         family={Ma},
+         familyi={M\bibinitperiod},
+         given={Hang},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=YJ}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Jingxing},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CL}{%
+         family={Cohen},
+         familyi={C\bibinitperiod},
+         given={Liron},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Kumar},
+         familyi={K\bibinitperiod},
+         given={TK},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=KS}{%
+         family={Koenig},
+         familyi={K\bibinitperiod},
+         given={Sven},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MH+1}
+    \strng{fullhash}{MHYJCLKTKS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{Proceedings of the AAAI Conference on Artificial
+  Intelligence and Interactive Digital Entertainment}
+    \field{number}{1}
+    \field{pages}{270\bibrangedash 272}
+    \field{title}{Feasibility study: Moving non-homogeneous teams in congested
+  video game environments}
+    \field{volume}{13}
+    \field{year}{2017}
   \endentry
 
   \entry{nebel19a}{article}{}
@@ -938,6 +987,106 @@
     \field{title}{Multi-agent path finding--an overview}
     \field{journaltitle}{Artificial Intelligence}
     \field{year}{2019}
+  \endentry
+
+  \entry{surynek2023candidate}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=SP}{%
+         family={Surynek},
+         familyi={S\bibinitperiod},
+         given={Pavel},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SP1}
+    \strng{fullhash}{SP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{ICAART (3)}
+    \field{pages}{517\bibrangedash 524}
+    \field{title}{Candidate Path Selection Heuristics for Multi-Agent Path
+  Finding: A Novel Compilation-Based Method.}
+    \field{year}{2023}
+  \endentry
+
+  \entry{veloso2015cobots}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=VM}{%
+         family={Veloso},
+         familyi={V\bibinitperiod},
+         given={Manuela},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Biswas},
+         familyi={B\bibinitperiod},
+         given={Joydeep},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CB}{%
+         family={Coltin},
+         familyi={C\bibinitperiod},
+         given={Brian},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Rosenthal},
+         familyi={R\bibinitperiod},
+         given={Stephanie},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Citeseer}%
+    }
+    \strng{namehash}{VM+1}
+    \strng{fullhash}{VMBJCBRS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{V}
+    \field{sortinithash}{V}
+    \field{booktitle}{Twenty-fourth international joint conference on
+  artificial intelligence}
+    \field{title}{Cobots: Robust symbiotic autonomous mobile service robots}
+    \field{year}{2015}
+  \endentry
+
+  \entry{wurman2008coordinating}{article}{}
+    \name{author}{3}{}{%
+      {{hash=WPR}{%
+         family={Wurman},
+         familyi={W\bibinitperiod},
+         given={Peter\bibnamedelima R},
+         giveni={P\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=DR}{%
+         family={D'Andrea},
+         familyi={D\bibinitperiod},
+         given={Raffaello},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Mountz},
+         familyi={M\bibinitperiod},
+         given={Mick},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WPRDRMM1}
+    \strng{fullhash}{WPRDRMM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{number}{1}
+    \field{pages}{9\bibrangedash 9}
+    \field{title}{Coordinating hundreds of cooperative, autonomous vehicles in
+  warehouses}
+    \field{volume}{29}
+    \field{journaltitle}{AI magazine}
+    \field{year}{2008}
   \endentry
 \enddatalist
 \endinput

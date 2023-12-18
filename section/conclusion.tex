@@ -1,1 +1,11 @@
 \section{Conclusion}
+
+In this work, we have established different Plan Merging methods with some of them able to outperform the baseline MAPF solver when only a partial solution is requested. We provide approaches based on conflicts, in particular through heatmaps. Through the different steps we defined. We describe multiple ways and parameters to performed them.
+
+We provide a baseline for Individual Path Finding with multiple parameters, such as, the number of paths, additional path computing with modified path length to provide different set of paths for each agents. While IPF could potentially be optimized further with languages like C++, the baseline we outlined remains suitable for experimental purposes.
+
+We provide two different approaches for the Path Selection step which is based on potential conflict and on heatmaps.
+
+Finally, we formulated a partial solver based on the baseline MAPF solver, which computes solutions or partial solutions using subgraphs and/or precomputed paths.
+
+The results demonstrated that the most effective approaches we produced is the witness solver. The witness being an approach using one randomly selected path for each agent converted into a subgraph. Some approaches still provide a partial solution faster than the MAPF baseline. This observation highlights the limitations of our defined approaches but also pointing towards potential improvement in future work, particularly emphasizing on the IPF and path selection processes.

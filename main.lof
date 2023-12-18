@@ -1,24 +1,26 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Illustrated graph of the instance format example\nobreakspace {}\ref {lst:instance_format_example}\relax }}{11}{figure.caption.5}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Overview of the thesis\relax }}{13}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Illustrated graph of the instance format example\nobreakspace {}\ref {lst:instance_format_example}\relax }}{11}{figure.caption.6}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Overview of the thesis\relax }}{13}{figure.caption.8}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Overview of IPF\relax }}{14}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Example of a \(\tau = \{\gamma _r, \gamma _b, \gamma _g\}\)\relax }}{15}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Diversity vs Distance\relax }}{17}{figure.caption.12}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Flowchart of IPF computation using multi-shot solving and assumption\relax }}{20}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Overview of IPF\relax }}{14}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Example of a \(\tau = \{\gamma _r, \gamma _b, \gamma _g\}\)\relax }}{15}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diversity vs Distance\relax }}{16}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Flowchart of IPF computation using multi-shot solving and assumption\relax }}{19}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Overview of Path Selection\relax }}{23}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Example of Individual Heatmap computed from a \(|\gamma |=3\)\relax }}{24}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Overview of Merging: Path Elimination\relax }}{26}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Eliminating paths using unique heatmap value process overview\relax }}{27}{figure.caption.20}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Eliminating paths using unique Global Heatmap value process example\relax }}{28}{figure.caption.21}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Result of eliminating paths using unique heatmap value process\relax }}{29}{figure.caption.22}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Eliminating paths using summed Global Heatmap values process overview\relax }}{31}{figure.caption.28}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Overview of Merging: Path Selection\relax }}{32}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Overview of Path Selection\relax }}{22}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Example of Individual Heatmap computed from a \(|\gamma |=3\)\relax }}{23}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Overview of Merging: Path Elimination\relax }}{25}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Eliminating paths using unique heatmap value\relax }}{26}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Eliminating paths using unique Global Heatmap value process example\relax }}{27}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Result of eliminating paths using unique heatmap value process\relax }}{28}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Eliminating paths using summed Global Heatmap values process overview\relax }}{29}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Overview of Merging: Path Selection\relax }}{31}{figure.caption.30}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Example for solving approaches. Having a \(|\tau | = 4\) as result of IPF\relax }}{38}{figure.caption.34}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Possible output for Path Selection \& Pre computed paths\relax }}{39}{figure.caption.35}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Example for solving approaches. Having a \(|\tau | = 4\) as result of IPF\relax }}{40}{figure.caption.36}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Example of corridor\relax }}{41}{figure.caption.38}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Example of diamond of size 1 and 2\relax }}{42}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Example for solving approaches. Having a \(|\tau | = 3\) as result of IPF\relax }}{37}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Possible output for Path Selection \& Pre computed paths\relax }}{38}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Example for solving approaches. Having a \(|\tau | = 3\) as result of IPF\relax }}{39}{figure.caption.37}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Example of corridor\relax }}{40}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Example of diamond of size 1 and 2\relax }}{41}{figure.caption.41}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Inevitable conflict example for pre-computed path strategy\relax }}{45}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Cactus plot given selected approaches\relax }}{47}{figure.caption.46}%

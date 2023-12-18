@@ -1,6 +1,6 @@
-In this chapter, we will introduce the two solving approach that we explored. Solving can be performed using already computed-paths or a subgraph defined by paths.
+In this chapter, we will introduce the two solving approaches that we explored. Solving can be performed using already computed-paths or a subgraph defined by paths.
 
-Solving in both cases is basically performed using the same encoding defined in listing~\ref{lst:solver}.
+Solving in both cases is basically performed using the encoding defined in Listing~\ref{lst:solver}.
 
 \begin{minipage}[H]{\linewidth}
 \begin{lstlisting}[style=mystyle, caption={Encoding of final solver}, label={lst:solver}, numbers=left, ,escapechar=|]
@@ -30,16 +30,16 @@ Solving in both cases is basically performed using the same encoding defined in 
 \end{minipage}
 
 
-This encoding is derived from the MAPF encoding illustrated in listing~\ref{lst:base_mapf_encoding} with two significant modifications. The first modification involves the redefinition of movement predicates. Instead of relying on \(vertex/1\) and \(edges/2\), movement is now defined on \(nvertex/1\) and \(nedge/2\), which are generated from the encoding detailed in listing~\ref{lst:converting_paths_to_subgraph}.
+This encoding is derived from the MAPF encoding illustrated in Listing~\ref{lst:base_mapf_encoding} with two significant modifications. The first modification involves the redefinition of movement predicates. Instead of relying on \(vertex/1\) and \(edges/2\), movement is now defined on \(nvertex/1\) and \(nedge/2\), which are generated from the encoding detailed in Listing~\ref{lst:converting_paths_to_subgraph}.
 
-The second distinction is highlighted in lines~\ref{line:ipf_goal_reached} and~\ref{line:maximize_goal_reached}. Unlike classical MAPF, which either provides a complete solution or returns unsatisfiable if no solution exists, the solver in this context can produce a partial solution. This means that due to the steps taken to reduce the complexity MAPF problem, there is a possibility that the solver might not find a complete solution.
+The second distinction is highlighted in lines~\ref{line:ipf_goal_reached} and~\ref{line:maximize_goal_reached}. Unlike classical MAPF, which either provides a complete solution or returns unsatisfiable if no solution exists, the solver in this context can produce a partial solution. This means that due to the steps taken to reduce the complexity MAPF problem, there is a possibility that the solver might not find a complete solution the way we defined it. However, it is possible to extend the algorithm to guarantee the solution by relaxing selected paths -- in the worse case, we relax all selected paths. Which correspond to classical MAPF solving. 
 
 
-In order to highlight the differences between the two different kinds of solving approaches we will present, we introduce an example denoted in the following figure~\ref{fig:partial_solving_example}. In this example, we have on the left a \(\tau\) result of IPF of a MAPF problem \(\mathcal{P}\).
+In order to highlight the differences between the two different kinds of solving approaches, we introduce an example in figure~\ref{fig:partial_solving_example}; a \(\tau\) result of IPF of a MAPF problem \(\mathcal{P}\).
 
 \begin{figure}[H]
     \centering
-    \caption{Example for solving approaches. Having a \(|\tau| = 4\) as result of IPF}\label{fig:partial_solving_example}
+    \caption{Example for solving approaches. Having a \(|\tau| = 3\) as result of IPF}\label{fig:partial_solving_example}
     \includegraphics[width=9cm]{img/partial_solving_example.png}
 \end{figure}
 
@@ -51,12 +51,10 @@ As mentioned in the Path Selection section~\ref{sec:pathselection}, the output c
 
 \begin{minipage}[H]{\linewidth}
 \begin{lstlisting}[style=mystyle]
-    at(R,V,T) :- 
-        selected_path(R,I), 
-        at(R,I,V,T).
+    at(R,V,T) :- selected_path(R,I), at(R,I,V,T). |\label{line:selected_to_at}|
 \end{lstlisting}
 \end{minipage} 
-\noindent Through line~\ref{line:one_position_at_a_time}, we ensure that the selected paths are incorporated into the solution. Conversely, for agents without a selected path, the encoding is employed to compute their paths as the MAPF encoding described here~\ref{lst:base_mapf_encoding}.
+\noindent Through line~\ref{line:selected_to_at}, we ensure that the selected paths are incorporated into the solution. Conversely, for agents without a selected path, the encoding is employed to compute their paths.
 
 \begin{figure}[H]
     \centering
@@ -64,19 +62,19 @@ As mentioned in the Path Selection section~\ref{sec:pathselection}, the output c
     \includegraphics[width=9cm]{img/pre_computed_path_solving.drawio.png}
 \end{figure}
 
-Figure~\ref{fig:pre_computed_path_solving} describes a partial plan \(\hat{\Pi}\) where only blue agent has a path. Using pre-computed paths aims to reduce the number of paths to compute. In the example outlined in figure~\ref{fig:pre_computed_path_solving}, the solving requires a makespan of five.
+Figure~\ref{fig:pre_computed_path_solving} describes a partial plan \(\hat{\Pi}\) where only blue agent has a path. Partial Solving now computes path for the two remaining agents, which is, hopefully easier than computing paths for the all three. In the example outlined in figure~\ref{fig:pre_computed_path_solving}, the solving requires a makespan of five.
 
 \section{Subgraph}
 
-On the other hand, the second objective described in Section~\ref{sec:pathselection} aims to create a subgraph in order to reduce the size of the problem. As illustrated in Figure~\ref{fig:partial_solving_example}, we obtain the subgraph shown in Figure~\ref{fig:subgraph_solving}.
+The second objective described in Section~\ref{sec:pathselection} aims to create a subgraph in order to reduce the size of the problem. From the paths in Figure~\ref{fig:partial_solving_example}, we obtain the subgraph shown in Figure~\ref{fig:subgraph_solving}.
 
 \begin{figure}[H]
     \centering
-    \caption{Example for solving approaches. Having a \(|\tau| = 4\) as result of IPF}\label{fig:subgraph_solving}
+    \caption{Example for solving approaches. Having a \(|\tau| = 3\) as result of IPF}\label{fig:subgraph_solving}
     \includegraphics[width=9cm]{img/subgraph_solving.png}
 \end{figure}
 
-Contrary to pre-computing path, we aim to reduce the size of the graph the agents can move on. Applying MAPF on the problems described in figure~\ref{fig:subgraph_solving} can find a solution with a makespan of 4. To summarize both approaches, pre-computing paths aims to reduce the number of agent for which a path has to be found at the cost of a possible lost of optimality. On the other hand, using subgraphs reduce the space search of the initial problem \(\mathcal{P}\) by denoting a smaller problem \(\mathcal{P}'\). Note that if an optimal solution exists for \(\mathcal{P}'\) there is no guarantee that this solution is optimal for \(\mathcal{P}\).
+Contrary to pre-computing path, we aim to reduce the size of the graph the agents can move on. Applying MAPF on the problems described in figure~\ref{fig:subgraph_solving} can find a solution with a makespan of 4.
 
 The two approaches presented can be used as one. 
 
@@ -86,8 +84,7 @@ In practice, the subgraph solving approach seems to not be enough to fully solve
 
 \subsubsection{Corridor}
 
-The corridor strategy is engineered to augment the subgraph-solving process by incorporating neighboring vertices and their associated edges directly into the sub-graph. Corridors can vary in size, allowing for different levels of expansion. Figure~\ref{img:corridor} illustrates a corridor with a size \(k\) equal to one. 
-
+The corridor strategy~\cite{surynek2023candidate} is engineered to augment the subgraph-solving process by incorporating neighboring vertices and their associated edges directly into the sub-graph. Corridors can vary in size, allowing for different levels of expansion. Figure~\ref{img:corridor} illustrates a corridor of size one.
 
 \begin{figure}[H]
     \centering
@@ -95,7 +92,7 @@ The corridor strategy is engineered to augment the subgraph-solving process by i
     \includegraphics[width=\widthimg]{img/corridor.drawio.png}
 \end{figure}
 
-The following encoding in listing~\ref{lst:corridor_encoding} describe how corridors for paths can be computed.
+The following encoding in Listing~\ref{lst:corridor_encoding} describe how corridors for paths can be computed.
 
 \begin{minipage}[H]{\linewidth}
 \begin{lstlisting}[style=mystyle, caption={Corridor extension encoding}, label={lst:corridor_encoding}]
@@ -112,7 +109,7 @@ The following encoding in listing~\ref{lst:corridor_encoding} describe how corri
 \end{lstlisting}
 \end{minipage}
 
-Predicate \(selected\_path\_for\_corridor/2\) highlights a path that requires a corridor extension. In practice, we apply corridors to the conflicting paths added to the conflict-free set of paths.
+Predicate \(selected\_path\_for\_corridor/2\) highlights a path that requires a corridor extension.
 
 With a sufficiently large \(k\), the entire graph can be covered; using a large corridor could essentially revert the problem back to a classical MAPF scenario.
 
@@ -120,7 +117,7 @@ In practice, corridors are created only for paths involved in conflicts, and a c
 
 \subsubsection{Diamond}
 
-The diamond extension strategy involves expanding the sub-graph by incorporating diamond-shaped arrangements of vertices around initial vertices. As illustrated in figure~\ref{img:diamond}, various levels of diamond extension can be applied, each increasing the size of the sub-graph and thereby expanding the possibilities for conflict resolution.
+The diamond extension strategy involves expanding the sub-graph by incorporating diamond-shaped arrangements of vertices around conflicting vertices. As illustrated in figure~\ref{img:diamond}, various levels of diamond extension can be applied, each increasing the size of the sub-graph and thereby expanding the possibilities for conflict resolution.
 
 \begin{figure}[H]
   \centering
@@ -129,7 +126,7 @@ The diamond extension strategy involves expanding the sub-graph by incorporating
 \end{figure}
 
 
-The following listing~\ref{lst:corridor_encoding} describes how diamonds are computed. As for corridors, the predicate \(selected\_vertex\_for\_diamond/1\) highlight a vertex that requires a diamond extension. In practice, we apply diamond extension on every conflict induced by the set of paths composing the subgraph. 
+The encoding in Listing~\ref{lst:corridor_encoding} describes how diamonds are computed. As for corridors, the predicate \(selected\_vertex\_for\_diamond/1\) highlight a vertex that requires a diamond extension. In practice, we apply diamond extension on every conflict induced by the set of paths composing the subgraph. 
 
 \begin{minipage}[H]{\linewidth}
 \begin{lstlisting}[style=mystyle, caption={Diamond extension encoding}, label={lst:diamond_encoding}]

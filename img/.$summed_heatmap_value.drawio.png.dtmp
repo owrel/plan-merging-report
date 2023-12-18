@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-09-28T08:14:46.684Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.7.5 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="qHHNyxhxU2vtkXpsotKy" version="21.7.5" type="device">
+<mxfile host="Electron" modified="2023-11-17T10:31:28.915Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.7.5 Chrome/114.0.5735.289 Electron/25.8.1 Safari/537.36" etag="0N2WiBQbYcgHw6np2pRv" version="21.7.5" type="device">
   <diagram name="Page-1" id="ovM7wd_VRZYMrA-r4WwR">
     <mxGraphModel dx="1434" dy="879" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -13,13 +13,13 @@
         <mxCell id="E3yms8BP8HBt7jfq9A4G-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="E3yms8BP8HBt7jfq9A4G-2" target="E3yms8BP8HBt7jfq9A4G-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="E3yms8BP8HBt7jfq9A4G-2" value="For each paths, summing associated&amp;nbsp;&lt;b&gt;GH &lt;/b&gt;values&lt;b&gt;&amp;nbsp;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="E3yms8BP8HBt7jfq9A4G-2" value="For each path, sum associated&amp;nbsp;&lt;b&gt;GH &lt;/b&gt;values&lt;b&gt;&amp;nbsp;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="450" y="320" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="E3yms8BP8HBt7jfq9A4G-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="E3yms8BP8HBt7jfq9A4G-4" target="E3yms8BP8HBt7jfq9A4G-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="E3yms8BP8HBt7jfq9A4G-4" value="Ordering paths given their summed &lt;b&gt;GH &lt;/b&gt;values" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+        <mxCell id="E3yms8BP8HBt7jfq9A4G-4" value="Order paths given their summed &lt;b&gt;GH &lt;/b&gt;values" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="600" y="320" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="E3yms8BP8HBt7jfq9A4G-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="E3yms8BP8HBt7jfq9A4G-6" target="E3yms8BP8HBt7jfq9A4G-1" edge="1">
@@ -31,7 +31,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="E3yms8BP8HBt7jfq9A4G-6" value="Killing a portion &lt;b&gt;p&lt;/b&gt;&amp;nbsp;of top paths" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+        <mxCell id="E3yms8BP8HBt7jfq9A4G-6" value="Kill a portion &lt;b&gt;p&lt;/b&gt;&amp;nbsp;of top paths" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="750" y="320" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="E3yms8BP8HBt7jfq9A4G-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="E3yms8BP8HBt7jfq9A4G-6" edge="1">

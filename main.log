@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  30 OCT 2023 20:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.8.31)  21 NOV 2023 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -793,6 +793,12 @@ LaTeX Font Info:    Trying to load font information for U+bbold on input line 7
  (/usr/share/texmf-dist/tex/latex/bbold/Ubbold.fd) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (5.81091pt too wide) in paragraph at lines 85--88
+\OT1/cmr/m/n/10 wide-ranging ap-pli-ca-tions in-clud-ing GPS, video games, and 
+traf-fic con-trol. MAPF
+ []
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
@@ -819,13 +825,13 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.105 \newpage
-               [1] (./main.toc [2
-
-])
+               [1] (./main.toc)
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [3] (./main.lof)
+ [2
+
+] [3] (./main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
@@ -843,77 +849,82 @@ Package newfloat Info: Setting Plan B file extension to `lof'... on input line
 121.
 (./section/introduction.tex [6
 
-]) (./section/background.tex [7]
-Overfull \hbox (22.76184pt too wide) in paragraph at lines 30--33
+]
+<img/pm_example_intro.png, id=299, 1299.85625pt x 466.74374pt>
+File: img/pm_example_intro.png Graphic file (type png)
+<use img/pm_example_intro.png>
+Package pdftex.def Info: img/pm_example_intro.png  used on input line 14.
+(pdftex.def)             Requested size: 256.0748pt x 91.94406pt.
+) (./section/background.tex [7 <./img/pm_example_intro.png>]
+Overfull \hbox (26.70628pt too wide) in paragraph at lines 29--32
 []\OT1/cmr/m/n/10 In a rule $\OML/cmm/m/it/10 r$\OT1/cmr/m/n/10 , $\OML/cmm/m/i
-t/10 a[]$ \OT1/cmr/m/n/10 rep-re-sent the head of the rule and $\OMS/cmsy/m/n/1
-0 f\OML/cmm/m/it/10 a[]; [] ; a[]; not []a[]; [] ; not []a[]\OMS/cmsy/m/n/10 g$
-
+t/10 a[]$ \OT1/cmr/m/n/10 rep-re-sents the head of the rule and $\OMS/cmsy/m/n/
+10 f\OML/cmm/m/it/10 a[]; [] ; a[]; not []a[]; [] ; not []a[]\OMS/cmsy/m/n/10 g
+$
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 42--56
-[]$[]$
- []
-
-
-Overfull \hbox (15.0pt too wide) in paragraph at lines 57--63
-[]$[]$
+Overfull \hbox (15.0pt too wide) in paragraph at lines 42--55
+[]$[]$ 
  []
 
 [8]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 64--69
+Overfull \hbox (15.0pt too wide) in paragraph at lines 59--64
 []$[]$ 
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 72--78
+Overfull \hbox (15.0pt too wide) in paragraph at lines 67--72
+[]$[]$ 
+ []
+
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 75--84
+[]$[]$ 
+ []
+
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 88--94
 []$[]$
  []
 
-
-Overfull \hbox (0.65308pt too wide) in paragraph at lines 87--88
-[]$\OML/cmm/m/it/10 vertex=\OT1/cmr/m/n/10 1$ which de-scribe a ver-tex of the 
-graph. With a tu-ple $(\OML/cmm/m/it/10 X; Y\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;
- X; Y \OMS/cmsy/m/n/10 2
- []
-
+[9]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 105.
+nput line 121.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 104--131
+Overfull \hbox (15.0pt too wide) in paragraph at lines 120--147
 []$[]$ 
  []
 
-<img/illustrated_instance_format_example.drawio.png, id=327, 803.0pt x 614.295p
+<img/illustrated_instance_format_example.drawio.png, id=353, 803.0pt x 614.295p
 t>
 File: img/illustrated_instance_format_example.drawio.png Graphic file (type png
 )
 <use img/illustrated_instance_format_example.drawio.png>
 Package pdftex.def Info: img/illustrated_instance_format_example.drawio.png  us
-ed on input line 136.
+ed on input line 152.
 (pdftex.def)             Requested size: 341.43306pt x 261.19846pt.
-[9] [10]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 149--171
+[10]
+Overfull \hbox (15.0pt too wide) in paragraph at lines 165--187
 []$[]$ 
  []
 
 [11 <./img/illustrated_instance_format_example.drawio.png>])
-(./section/overview.tex [12]
-<img/overview.drawio.png, id=423, 723.70375pt x 61.22874pt>
+(./section/overview.tex
+<img/overview.drawio.png, id=410, 723.70375pt x 61.22874pt>
 File: img/overview.drawio.png Graphic file (type png)
 <use img/overview.drawio.png>
-Package pdftex.def Info: img/overview.drawio.png  used on input line 15.
+Package pdftex.def Info: img/overview.drawio.png  used on input line 7.
 (pdftex.def)             Requested size: 341.43306pt x 28.88681pt.
-) [13 <./img/overview.drawio.png>]
+ [12]) [13 <./img/overview.drawio.png>]
 Chapter 2.
 (./section/ipf.tex
-<img/overview_ipf.drawio.png, id=429, 884.30376pt x 352.31625pt>
+<img/overview_ipf.drawio.png, id=440, 884.30376pt x 352.31625pt>
 File: img/overview_ipf.drawio.png Graphic file (type png)
 <use img/overview_ipf.drawio.png>
 Package pdftex.def Info: img/overview_ipf.drawio.png  used on input line 7.
 (pdftex.def)             Requested size: 341.43306pt x 136.03192pt.
-<img/ipf_example.drawio.png, id=433, 574.145pt x 462.72874pt>
+<img/ipf_example.drawio.png, id=443, 574.145pt x 462.72874pt>
 File: img/ipf_example.drawio.png Graphic file (type png)
 <use img/ipf_example.drawio.png>
 Package pdftex.def Info: img/ipf_example.drawio.png  used on input line 17.
@@ -924,89 +935,89 @@ Package pdftex.def Info: img/ipf_example.drawio.png  used on input line 17.
 Package hyperref Info: bookmark level for unknown equ defaults to 0 on input li
 ne 33.
  [15 <./img/ipf_example.drawio.png>]
-<img/diversity_vs_distance.drawio.png, id=455, 754.82pt x 413.545pt>
+<img/diversity_vs_distance.drawio.png, id=467, 754.82pt x 413.545pt>
 File: img/diversity_vs_distance.drawio.png Graphic file (type png)
 <use img/diversity_vs_distance.drawio.png>
 Package pdftex.def Info: img/diversity_vs_distance.drawio.png  used on input li
 ne 53.
 (pdftex.def)             Requested size: 341.43306pt x 187.05898pt.
- [16]
+ [16 <./img/diversity_vs_distance.drawio.png>]
 Overfull \hbox (15.0pt too wide) in paragraph at lines 67--89
 []$[]$ 
  []
 
-[17 <./img/diversity_vs_distance.drawio.png>]
+[17]
 Overfull \hbox (15.0pt too wide) in paragraph at lines 96--101
 []$[]$ 
  []
 
-[18]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 110--136
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 110--130
 []$[]$ 
  []
 
-<img/flowchart_ipf_computation.drawio.png, id=511, 884.30376pt x 392.46625pt>
+[18]
+<img/flowchart_ipf_computation.drawio.png, id=539, 884.30376pt x 392.46625pt>
 File: img/flowchart_ipf_computation.drawio.png Graphic file (type png)
 <use img/flowchart_ipf_computation.drawio.png>
 Package pdftex.def Info: img/flowchart_ipf_computation.drawio.png  used on inpu
-t line 145.
+t line 139.
 (pdftex.def)             Requested size: 341.43306pt x 151.53413pt.
-[19]
 LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
-157.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 157.
+151.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 151.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 157.
+(Font)              for symbol `textbraceleft' on input line 151.
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 152--168
+Overfull \hbox (15.0pt too wide) in paragraph at lines 146--162
 []$[]$ 
  []
 
-[20 <./img/flowchart_ipf_computation.drawio.png>]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 186--198
+[19 <./img/flowchart_ipf_computation.drawio.png>] [20]
+Overfull \hbox (15.0pt too wide) in paragraph at lines 180--192
 []$[]$ 
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 201--222
+Overfull \hbox (15.0pt too wide) in paragraph at lines 195--216
 []$[]$ 
  []
 
-[21]) [22]
+) [21]
 Chapter 3.
 (./section/pathselection.tex
-<img/overview_merging.drawio.png, id=609, 844.15375pt x 282.05376pt>
+<img/overview_merging.drawio.png, id=606, 844.15375pt x 282.05376pt>
 File: img/overview_merging.drawio.png Graphic file (type png)
 <use img/overview_merging.drawio.png>
 Package pdftex.def Info: img/overview_merging.drawio.png  used on input line 8.
 
 (pdftex.def)             Requested size: 341.43306pt x 114.08481pt.
- [23
+ [22
 
  <./img/overview_merging.drawio.png>]
-<img/individual_heatmap.drawio.png, id=623, 1181.41376pt x 1215.54124pt>
+<img/individual_heatmap.drawio.png, id=619, 1181.41376pt x 1215.54124pt>
 File: img/individual_heatmap.drawio.png Graphic file (type png)
 <use img/individual_heatmap.drawio.png>
 Package pdftex.def Info: img/individual_heatmap.drawio.png  used on input line 
 32.
 (pdftex.def)             Requested size: 341.43306pt x 351.29234pt.
- [24 <./img/individual_heatmap.drawio.png>]
+ [23 <./img/individual_heatmap.drawio.png>]
 Overfull \hbox (15.0pt too wide) in paragraph at lines 52--60
 []$[]$ 
  []
 
-<img/overview_merging_path_elimination.drawio.png, id=637, 1004.75375pt x 472.7
+<img/overview_merging_path_elimination.drawio.png, id=633, 1004.75375pt x 472.7
 6625pt>
 File: img/overview_merging_path_elimination.drawio.png Graphic file (type png)
 <use img/overview_merging_path_elimination.drawio.png>
 Package pdftex.def Info: img/overview_merging_path_elimination.drawio.png  used
  on input line 76.
 (pdftex.def)             Requested size: 341.43306pt x 160.65182pt.
-[25] [26 <./img/overview_merging_path_elimination.drawio.png>]
+[24] [25 <./img/overview_merging_path_elimination.drawio.png>]
 Overfull \hbox (15.0pt too wide) in paragraph at lines 119--127
 []$[]$ 
  []
@@ -1016,20 +1027,20 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 131--138
 []$[]$ 
  []
 
-<img/simple_heatmap_value.drawio.png, id=662, 651.43375pt x 109.40875pt>
+<img/simple_heatmap_value.drawio.png, id=657, 651.43375pt x 109.40875pt>
 File: img/simple_heatmap_value.drawio.png Graphic file (type png)
 <use img/simple_heatmap_value.drawio.png>
 Package pdftex.def Info: img/simple_heatmap_value.drawio.png  used on input lin
 e 148.
 (pdftex.def)             Requested size: 341.43306pt x 57.34528pt.
-[27 <./img/simple_heatmap_value.drawio.png>]
-<img/pe_one_heatmap_value_example.drawio.png, id=682, 574.145pt x 462.72874pt>
+[26 <./img/simple_heatmap_value.drawio.png>]
+<img/pe_one_heatmap_value_example.drawio.png, id=679, 574.145pt x 462.72874pt>
 File: img/pe_one_heatmap_value_example.drawio.png Graphic file (type png)
 <use img/pe_one_heatmap_value_example.drawio.png>
 Package pdftex.def Info: img/pe_one_heatmap_value_example.drawio.png  used on i
 nput line 166.
 (pdftex.def)             Requested size: 341.43306pt x 275.18228pt.
-<img/pe_one_heatmap_value_example_result.drawio.png, id=685, 574.145pt x 462.72
+<img/pe_one_heatmap_value_example_result.drawio.png, id=682, 574.145pt x 462.72
 874pt>
 File: img/pe_one_heatmap_value_example_result.drawio.png Graphic file (type png
 )
@@ -1037,22 +1048,28 @@ File: img/pe_one_heatmap_value_example_result.drawio.png Graphic file (type png
 Package pdftex.def Info: img/pe_one_heatmap_value_example_result.drawio.png  us
 ed on input line 174.
 (pdftex.def)             Requested size: 341.43306pt x 275.18228pt.
- [28 <./img/pe_one_heatmap_value_example.drawio.png>] [29 <./img/pe_one_heatmap
+ [27 <./img/pe_one_heatmap_value_example.drawio.png>] [28 <./img/pe_one_heatmap
 _value_example_result.drawio.png>]
-<img/summed_heatmap_value.drawio.png, id=704, 651.43375pt x 109.40875pt>
+<img/summed_heatmap_value.drawio.png, id=699, 651.43375pt x 109.40875pt>
 File: img/summed_heatmap_value.drawio.png Graphic file (type png)
 <use img/summed_heatmap_value.drawio.png>
 Package pdftex.def Info: img/summed_heatmap_value.drawio.png  used on input lin
 e 227.
 (pdftex.def)             Requested size: 341.43306pt x 57.34528pt.
 
-[30]
+[29 <./img/summed_heatmap_value.drawio.png>]
 Overfull \hbox (15.0pt too wide) in paragraph at lines 240--260
 []$[]$ 
  []
 
-[31 <./img/summed_heatmap_value.drawio.png>]
-<img/overview_merging_path_selection.drawio.png, id=742, 994.71625pt x 332.2412
+
+Overfull \hbox (1.15689pt too wide) in paragraph at lines 261--262
+\OT1/cmr/m/n/10 which paths can be killed. Line []3[] la-bels paths with the pr
+ed-i-cate $\OML/cmm/m/it/10 to[]determine=\OT1/cmr/m/n/10 2$.
+ []
+
+[30]
+<img/overview_merging_path_selection.drawio.png, id=738, 994.71625pt x 332.2412
 6pt>
 File: img/overview_merging_path_selection.drawio.png Graphic file (type png)
 <use img/overview_merging_path_selection.drawio.png>
@@ -1060,127 +1077,157 @@ Package pdftex.def Info: img/overview_merging_path_selection.drawio.png  used o
 n input line 276.
 (pdftex.def)             Requested size: 341.43306pt x 114.04034pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 285--318
+Overfull \hbox (15.0pt too wide) in paragraph at lines 285--310
 []$[]$ 
  []
 
-[32 <./img/overview_merging_path_selection.drawio.png>] [33]
-Overfull \hbox (11.42458pt too wide) in paragraph at lines 329--330
-\OT1/cmr/bx/n/10 Utilizing Global Heatmaps: \OT1/cmr/m/n/10 The first ap-proach
- in-volves us-ing Global Heatmaps
- []
-
-
-Overfull \hbox (15.0pt too wide) in paragraph at lines 336--345
+[31 <./img/overview_merging_path_selection.drawio.png>] [32]
+Overfull \hbox (15.0pt too wide) in paragraph at lines 328--337
 []$[]$ 
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 352--390
+Overfull \hbox (15.0pt too wide) in paragraph at lines 344--382
 []$[]$ 
  []
 
-[34] [35]) [36]
+[33] [34]) [35]
 Chapter 4.
 (./section/partialsolving.tex
 Overfull \hbox (15.0pt too wide) in paragraph at lines 5--31
 []$[]$ 
  []
 
-[37
+[36
 
 ]
-<img/partial_solving_example.png, id=891, 453.695pt x 462.72874pt>
+<img/partial_solving_example.png, id=875, 453.695pt x 462.72874pt>
 File: img/partial_solving_example.png Graphic file (type png)
 <use img/partial_solving_example.png>
 Package pdftex.def Info: img/partial_solving_example.png  used on input line 43
 .
 (pdftex.def)             Requested size: 256.0748pt x 261.17392pt.
-
-Overfull \hbox (15.0pt too wide) in paragraph at lines 52--60
+ [37 <./img/partial_solving_example.png>]
+Overfull \hbox (15.0pt too wide) in paragraph at lines 52--58
 []$[]$
  []
 
-[38 <./img/partial_solving_example.png>]
-<img/pre_computed_path_solving.drawio.png, id=900, 453.695pt x 462.72874pt>
+<img/pre_computed_path_solving.drawio.png, id=884, 453.695pt x 462.72874pt>
 File: img/pre_computed_path_solving.drawio.png Graphic file (type png)
 <use img/pre_computed_path_solving.drawio.png>
 Package pdftex.def Info: img/pre_computed_path_solving.drawio.png  used on inpu
-t line 64.
+t line 62.
 (pdftex.def)             Requested size: 256.0748pt x 261.17392pt.
-<img/subgraph_solving.png, id=906, 453.695pt x 462.72874pt>
+<img/subgraph_solving.png, id=890, 453.695pt x 462.72874pt>
 File: img/subgraph_solving.png Graphic file (type png)
 <use img/subgraph_solving.png>
-Package pdftex.def Info: img/subgraph_solving.png  used on input line 76.
+Package pdftex.def Info: img/subgraph_solving.png  used on input line 74.
 (pdftex.def)             Requested size: 256.0748pt x 261.17392pt.
- [39 <./img/pre_computed_path_solving.drawio.png>]
-<img/corridor.drawio.png, id=918, 733.74126pt x 563.10374pt>
+[38 <./img/pre_computed_path_solving.drawio.png>]
+<img/corridor.drawio.png, id=901, 733.74126pt x 563.10374pt>
 File: img/corridor.drawio.png Graphic file (type png)
 <use img/corridor.drawio.png>
-Package pdftex.def Info: img/corridor.drawio.png  used on input line 95.
+Package pdftex.def Info: img/corridor.drawio.png  used on input line 92.
 (pdftex.def)             Requested size: 341.43306pt x 262.02956pt.
- [40 <./img/subgraph_solving.png>]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 100--114
+ [39 <./img/subgraph_solving.png>]
+Overfull \hbox (15.0pt too wide) in paragraph at lines 97--111
 []$[]$ 
  []
 
-[41 <./img/corridor.drawio.png>]
-<img/diamond.drawio.png, id=943, 713.66624pt x 563.10374pt>
+[40 <./img/corridor.drawio.png>]
+<img/diamond.drawio.png, id=926, 713.66624pt x 563.10374pt>
 File: img/diamond.drawio.png Graphic file (type png)
 <use img/diamond.drawio.png>
-Package pdftex.def Info: img/diamond.drawio.png  used on input line 128.
+Package pdftex.def Info: img/diamond.drawio.png  used on input line 125.
 (pdftex.def)             Requested size: 341.43306pt x 269.40172pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 134--147
+Overfull \hbox (15.0pt too wide) in paragraph at lines 131--144
 []$[]$ 
  []
 
-) [42 <./img/diamond.drawio.png>] [43]
+) [41 <./img/diamond.drawio.png>] [42]
 Chapter 5.
-(./section/benchmarks.tex) (./section/conclusion.tex) [44
+(./section/benchmarks.tex
+Overfull \hbox (15.0pt too wide) in paragraph at lines 26--37
+[]$[]$ 
+ []
+
+[43
 
 ]
+
+LaTeX Warning: Reference `tbl:computation_time' on page 44 undefined on input l
+ine 41.
+
+(./tables/tbl_computation_time.tex)
+
+LaTeX Warning: Reference `tbl:computation_time' on page 44 undefined on input l
+ine 46.
+
+<img/precomputed_path_conflict.drawio.png, id=959, 563.10374pt x 201.75375pt>
+File: img/precomputed_path_conflict.drawio.png Graphic file (type png)
+<use img/precomputed_path_conflict.drawio.png>
+Package pdftex.def Info: img/precomputed_path_conflict.drawio.png  used on inpu
+t line 52.
+(pdftex.def)             Requested size: 341.43306pt x 122.33075pt.
+[44{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+(./tables/tbl_path_proportion.tex) [45 <./img/precomputed_path_conflict.drawio.
+png>]
+<img/plt_cactus.png, id=974, 462.22687pt x 346.79562pt>
+File: img/plt_cactus.png Graphic file (type png)
+<use img/plt_cactus.png>
+Package pdftex.def Info: img/plt_cactus.png  used on input line 72.
+(pdftex.def)             Requested size: 341.43306pt x 256.16965pt.
+ [46]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 85.
+
+[47 <./img/plt_cactus.png>]) (./section/conclusion.tex) [48]
 Overfull \hbox (2.18016pt too wide) in paragraph at lines 146--146
 \OT1/cmr/m/n/10 reuse for multi-agent plan-ning''. In: \OT1/cmr/m/it/10 Ap-plie
 d In-tel-li-gence \OT1/cmr/m/n/10 50 (2020), pp. 365{
  []
 
-
+[49]
 Overfull \hbox (17.84074pt too wide) in paragraph at lines 146--146
 []\OT1/cmr/m/n/10 Bernhard Nebel. ``On the Com-pu-ta-tional Com-plex-ity of Mul
 ti-Agent Pathfind-
  []
 
-[45]
-Overfull \hbox (0.74391pt too wide) in paragraph at lines 146--146
-[]\OT1/cmr/m/n/10 R. Stern et al. ``Multi-Agent Pathfind-ing: Def-i-ni-tions, V
-ari-ants, and Bench-
- []
-
 
 Overfull \hbox (0.74391pt too wide) in paragraph at lines 146--146
 []\OT1/cmr/m/n/10 R. Stern et al. ``Multi-Agent Pathfind-ing: Def-i-ni-tions, V
 ari-ants, and Bench-
  []
 
-(./section/appendix.tex) [46] [47] (./main.aux)
+
+Overfull \hbox (0.74391pt too wide) in paragraph at lines 146--146
+[]\OT1/cmr/m/n/10 R. Stern et al. ``Multi-Agent Pathfind-ing: Def-i-ni-tions, V
+ari-ants, and Bench-
+ []
+
+(./section/appendix.tex) [50] [51] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0AB84C8D870BB52C58514059819DD085;4297.
+(rerunfilecheck)             Checksum: B25F656C3FFB242489122EF4FF9966F1;4243.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22180 strings out of 477985
- 385257 string characters out of 5840058
- 1903388 words of memory out of 5000000
- 41614 multiletter control sequences out of 15000+600000
- 522131 words of font info for 69 fonts, out of 8000000 for 9000
+ 22246 strings out of 477985
+ 387365 string characters out of 5840058
+ 1904388 words of memory out of 5000000
+ 41664 multiletter control sequences out of 15000+600000
+ 522466 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,13n,76p,1906b,1451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,18n,76p,1936b,1454s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/publ
@@ -1198,11 +1245,12 @@ pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (49 pages, 771780 bytes).
+ti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr
+/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (53 pages, 864117 bytes).
 PDF statistics:
- 1187 PDF objects out of 1200 (max. 8388607)
- 1042 compressed objects within 11 object streams
- 462 named destinations out of 1000 (max. 500000)
- 352 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1216 PDF objects out of 1440 (max. 8388607)
+ 1059 compressed objects within 11 object streams
+ 466 named destinations out of 1000 (max. 500000)
+ 359 words of extra memory for PDF output out of 10000 (max. 10000000)
 

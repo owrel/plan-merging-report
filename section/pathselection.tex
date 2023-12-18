@@ -1,6 +1,6 @@
 \label{sec:pathselection}
 
-In this chapter, we will describe what Path Selection (PS) is, how it works and which strategies we can use to take advantage of multiple computed paths per agent. The figure~\ref{fig:overview_merging} shows the different steps for Path Selection used in this work.
+In this chapter, we will describe what Path Selection (PS) is, how it works and which strategies we use to take advantage of multiple computed paths per agent. Figure~\ref{fig:overview_merging} shows the different steps for Path Selection used in this work.
 
 \begin{figure}[H]
     \centering
@@ -9,12 +9,12 @@ In this chapter, we will describe what Path Selection (PS) is, how it works and 
 \end{figure}
 
 
-Path Selection takes a \(\tau\) as its input and produces a subcomponent of the same \(\tau\). We denote this extracted portion as \(\tau'\). \(\tau'\) is defined such as \(\forall a \in A \text{ } | \text{ } \gamma'_a \in \tau' \subseteq \gamma_a \in \tau\). Furthermore \(\tau'\) can denote a plan, it requires that, for  \(\forall \gamma'_{a \in A' \subseteq A}\in \tau',| \gamma'_a|=1 \). 
+Path Selection takes a \(\tau\) as its input and produces a subcomponent \(\tau'\) when \(\forall a \in A \text{ } | \text{ } \gamma'_a \in \tau' \subseteq \gamma_a \in \tau\). Furthermore \(\tau'\)  denotes a plan, where \(\forall \gamma'_{a \in A' \subseteq A}\in \tau',| \gamma'_a|=1 \). 
 
 
 \section{Heatmap}
 
-Heatmap is about projecting likelihood of presence of agents on vertices given a \(\tau\), inspired from paper~\cite{atstfestko20a, banatu02a}. Likelihood refers to, in a scope of an agent, the probability of be being at a specific vertex for each time step according to a set of path \(\gamma\). This heatmap interpretation stands for the scope of one agent. We will refer to agent-related heatmap as \textbf{Individual Heatmap} (IH). We formalize, in equation~\ref{math:individual_heatmap} an Individual Heatmap \(\phi\):
+Heatmap is about projecting likelihood of presence of an agents on vertices at each step. Inspired from papers~\cite{atstfestko20a, banatu02a}. Likelihood refers to, in a scope of an agent, the probability of be being at a specific vertex for each time step according to a set of path \(\gamma\). This heatmap interpretation stands for the scope of one agent. We will refer to single agent heatmap as \textbf{Individual Heatmap} (IH). We formalize, in equation~\ref{math:individual_heatmap} an Individual Heatmap function:
 
 \begin{equ}[H]
     \begin{equation}\label{math:individual_heatmap}
@@ -24,7 +24,7 @@ Heatmap is about projecting likelihood of presence of agents on vertices given a
 \end{equ}
 
 
-\(\phi\) is define, given a \(\gamma\) per vertex and time step. For example, using this definition, we can compute the Individual Heatmap of a given \(|\gamma|=3\) illustrated in figure~\ref{fig:individual_heatmap}.
+\(\phi\) is calculated --  given a \(\gamma\) of an agent, a vertex and a timepoint. For example, we can compute the Individual Heatmap of a given \(|\gamma|=3\) illustrated in figure~\ref{fig:individual_heatmap}.
 
 \begin{figure}[H]
     \centering
@@ -32,9 +32,9 @@ Heatmap is about projecting likelihood of presence of agents on vertices given a
     \includegraphics[width=\widthimg]{img/individual_heatmap.drawio.png}
 \end{figure}
 
-This representation produces critical vertices for an agent, wherein heightened values correspond to a greater likelihood of vertex utilization within a probabilistic framework. On the other hand, the mean heatmap value associated with \(\gamma\) serves as an indicator of path diversity, with elevated values signifying a low level of path diversity.
+This representation produces critical vertices for an agent, where higher values correspond to a greater likelihood of vertex utilization. On the other hand, the mean heatmap value associated with \(\gamma\) serves as an indicator of path diversity, with elevated values signifying a low level of path diversity.
 
-Through the aggregation of all Individual Heatmaps within an instance of \(\tau\), a \textbf{Global Heatmap} (GH) can be derived. It is important to note that Global Heatmaps, in this context, no longer serve as a direct indicator of the likelihood of presence but instead an indicator of ``usage of vertices'' .
+we derive a \textbf{Global Heatmap} (GH) through the aggregation of all Individual Heatmaps. It is important to note that Global Heatmaps, in this context, no longer serve as a direct indicator of the likelihood of presence but instead an indicator of ``usage of vertices'' .
 
 A Global Heatmap \(\Phi\) of \(\tau\) is formalized in the following equation~\ref{math:global_heatmap}. As for Individual Heatmaps, a Global Heatmap value of \(\Phi\) is computed given a vertex \(v\) and a time step \(t\).  
 
@@ -59,14 +59,14 @@ We introduce the encoding of the Individual Heatmap in listing\ref{lst:individua
 \end{minipage}
 
 
-This short encoding introduces the \(heatmap/4\) predicates, with \(R\), \(V\) and \(T\) being respectively the agent ID, a vertex and a time point. The last argument of the predicate is a tuple \((K,N)\) where \(K\), computed on line~\ref{line:ihm_counting_all_paths}, is the number of paths of \(R\) that go through \(V\) at time step \(T\). And \(N\), computed on line~\ref{line:ihm_counting_all_paths}, denotes the number of paths that belong to the agent \(K\).
+This short encoding introduces  \(heatmap/4\) predicates, with \(R\), \(V\) and \(T\) being respectively the agent ID, a vertex and a time point. The last argument of the predicate is a tuple \((K,N)\) where \(K\), computed on line~\ref{line:ihm_counting_all_paths}, is the number of paths of \(R\) that go through \(V\) at time step \(T\). And \(N\), computed on line~\ref{line:ihm_counting_all_paths}, denotes the number of paths that belong to the agent \(K\).
 
-Concerning the calculation of the Global Heatmap using formula \ref{math:global_heatmap}, this computation is performed using \textbf{Python}\footnote{It is possible to provide the nominator and the denominator for the Global Heatmap at each vertex and each time step, however, compared to using a third-party programming language, it is very slow or not computationally feasible in practice.}.
+The calculation of the Global Heatmap is performed using \textbf{Python}\footnote{It is possible to provide the nominator and the denominator for the Global Heatmap at each vertex and each time step, however, compared to using a third-party programming language, it is very slow or not computationally feasible in practice.}.
 
 
 \section{Path Elimination}
 
-Path Elimination (PE) is a process involving the removal of paths that exhibit potential issues. This step serves as a preprocessing stage for Path Selection (PS), Path Elimination, therefore, serves to chunk through the multitude of possible paths and eliminate those that are deemed ``potentially problematic''.
+Path Elimination (PE) is the process of the removing paths that exhibit potential issues. It serves to chunk through the multitude of possible paths and eliminate those that are deemed ``potentially problematic''. This step serves as a preprocessing stage for Path Selection (PS). 
 
 Figure~\ref{fig:overview_merging_path_elemination} sums up the different processes in order to eliminate potentially-conflicting-paths.
 
@@ -91,15 +91,15 @@ We first introduce some definition.
 \end{definition}
 
 \begin{definition}
-    A vertex can be classified as \textbf{critical} at a certain time step by a Path Elimination process. By this means, PE assume that there is high chance of collision.
+    A vertex can be classified as \textbf{critical} at a certain time step by a Path Elimination process. It assume that there is high chance of collision.
 \end{definition}
 
 \begin{definition}
-    An agent is classified as \textbf{critical} when at least one of its vertex composing its plan is considered as \textbf{critical}.
+    An agent is classified as \textbf{critical} when at least one of the vertices composing its plan is considered as \textbf{critical} in each of its paths.
 \end{definition}
 
 \begin{definition}
-    A \textbf{potential conflict} denotes conflict among paths of different \(\gamma\). It do not represent an actual conflict. Paths of agents involved in potential conflict would end-up creating conflict if they were used as they were.
+    A \textbf{potential conflict} denotes conflict among paths of different \(\gamma\). It do not represent an actual conflict.
 \end{definition}
 
 
@@ -108,13 +108,13 @@ We first introduce some definition.
 
 Global Heatmap values often provide insights into vertices that are prone to conflicts. This information can be leveraged for path elimination. 
 
-A simplistic approach involves minimizing the cumulative Global Heatmap value by allowing the encoding to kill paths. Unfortunately, due to the interconnections among heatmaps, practical grounding of this approach becomes feasible only on small instances.
+A simplistic approach involves minimizing the cumulative Global Heatmap value by allowing the encoding select or not paths for the computation of GH. Unfortunately, due to the interconnections among heatmaps, practical grounding of this approach becomes feasible only on small instances.
 
 We then present three approaches for identifying potentially conflicting paths in a reasonable computation time.
 
 \subsubsection{Eliminating paths using unique heatmap value}
 
-One straightforward approach involves ordering all possible assignments of \((v, t)\) within a given \(\tau\) based on their global heatmap values. Subsequently, we classify the top \(k\) vertices as ``critical'' These critical nodes can then be used as reference points for path elimination based on various criteria. We can identify which paths pass through critical vertices using an ASP statement like this:
+One straightforward approach involves ordering all possible assignments of \((v, t)\) within a given \(\tau\) based on their global heatmap values. We classify the top \(k\) vertices as ``critical''.Which can then be used as reference points for path elimination based on various criteria. We can identify which paths pass through critical vertices using the following rule:
 
 \begin{minipage}[H]{\linewidth}
 \begin{lstlisting}[style=mystyle]
@@ -126,7 +126,7 @@ One straightforward approach involves ordering all possible assignments of \((v,
 \end{minipage}
 
 
-From the \(critical\_path/4\) predicate, we can determine that \(n\) critical paths originating from a critical node should be eliminated. For instance, we may opt to eliminate half of them as follows:
+We then determine \(n\) critical paths that should be eliminated. For instance, we may opt to eliminate half of them as follows:
 
 \begin{minipage}[H]{\linewidth}
 \begin{lstlisting}[style=mystyle]
@@ -136,21 +136,21 @@ From the \(critical\_path/4\) predicate, we can determine that \(n\) critical pa
 \end{lstlisting}
 \end{minipage}
 
-Note that we use predicate both predicates \(to\_kill/2\) and \(path\_killed/2\). They refer to the same concept. We do, however, differentiate them so the paths that are yet to be eliminated (\(to\_kill/2\)) do not interfere with already killed paths (\(path\_killed/2\)).  
+Note that we use predicate\(to\_kill/2\) and \(path\_killed/2\) that refer to the same concept. We do differentiate them so the paths that are yet to be eliminated (\(to\_kill/2\)) do not interfere with already killed paths (\(path\_killed/2\)).  
 
-There are various parameters and variations to consider in determining the value that \(n\) can take. These may include individual heatmap values, whether an agent has already had some of its paths eliminated, and other factors in the decision-making process.
+There are various parameters and variations to consider in determining the value that \(n\) can take. These may include individual heatmap values, whether an agent has already had some of its paths eliminated
 
 The approach we settle on is the following;
 
 \begin{figure}[H]
     \centering
-    \caption{Eliminating paths using unique heatmap value process overview}\label{fig:simple_heatmap_value_elimination}
+    \caption{Eliminating paths using unique heatmap value}\label{fig:simple_heatmap_value_elimination}
     \includegraphics[width=\widthimg]{img/simple_heatmap_value.drawio.png}
 \end{figure}
 
-As illustrated in figure~\ref{fig:simple_heatmap_value_elimination}, it is possible to loop over the elimination to eliminate more paths. 
+As illustrated in figure~\ref{fig:simple_heatmap_value_elimination}, it is possible to loop the process to eliminate more paths. 
 
-As mentioned earlier, the lack of float-point number handling of Clingo forces us to use a Python wrapper to sort Global and Individual Heatmap values.
+As mentioned earlier, the lack of floating-point number handling of Clingo forces us to use a Python wrapper to sort Global and Individual Heatmap values.
 
 The decision to eliminate paths of agents with the lowest Individual Heatmap values can be justified on two grounds:
 \begin{enumerate}
@@ -174,13 +174,13 @@ Between the two highlighted vertices, according to the elimination process~\ref{
     \includegraphics[width=\widthimg]{img/pe_one_heatmap_value_example_result.drawio.png}
 \end{figure}
 
-Nevertheless, despite our efforts to implement strategies aimed at balance the elimination process among agents, adopting a vertex-oriented approach tends to kill agents swiftly.
+Nevertheless, despite our efforts to implement strategies aimed at balancing the elimination process among agents, adopting a vertex-oriented approach tends to kill agents swiftly.
 
 \subsubsection{Eliminating paths using GH threshold}
 
-On flaw that comes with the previous approach is that the process is doing one vertex after the other. Thus, as described in figure~\ref{fig:simple_heatmap_value_elimination}, the number of loops is hard to define; it is difficult to define a value that does not kill too many agents, but on the other hand, it is required to kill enough paths. We propose a way to denotes multiple critical vertices in one call (we can still implement a loop as in the first approach described).
+One flaw that comes with the previous approach is that the process is doing one vertex after an other. It is difficult to define a value that eliminate the right amount of paths to be relevant. We propose a way to identify multiple critical vertices in one call.
 
-The principle is simple, if the Global Heatmap value of a vertex at a specific time point is higher than a defined value, the vertex is denoted as critical. We call this defined value a \textbf{threshold} denoted \(\mathcal{H}\). Formally, we have;
+The principle is simple, if the Global Heatmap value of a vertex at a specific time point is higher than a defined value \(\mathcal{H}\), the vertex is denoted as critical. We call this defined value a \textbf{threshold}. Formally, we have;
 
 \begin{equ}[H]
     \begin{equation}\label{math:critical_vertex_threshold}
@@ -189,14 +189,14 @@ The principle is simple, if the Global Heatmap value of a vertex at a specific t
     \caption{Identifying critical vertices using threshold}
 \end{equ}
 
-Where \(\mathcal{F}\) is a function enumerating all possible tuple \(v,t\) in \(\tau\). It is defined as such;
+Where \(\mathcal{F}\) is a function enumerating all possible tuple \(v,t\) in \(\tau\):
 
 \[
     \mathcal{F}(\tau) = \mathlarger{\mathlarger{\bigcup_{\gamma\in\tau}}}\bigcup_{\pi\in\gamma}\cup_{t=0}^{t \rightarrow |\pi|}{(\pi[t],t)}
 \]
 
 
-Threshold values can be defined through different equations, considering different properties, we defined:
+Threshold values can be defined through different equations, considering different properties. Equation~\ref{math:simple_biased_threshold}, denoted as \(\mathcal{H}_{sbt}(A,\Delta)\), defines a simple biased threshold. In essence, without considering the bias, this equation implies that a vertex is labeled critical if, for all \(n\) agents with \(k\) paths each, \(\frac{1}{n}\) of their paths utilize this vertex at a specific time plus one additional path. The bias adjustment allows for the flexible inclusion of more or less critical vertices.
 
 \begin{equ}[H]
     \begin{equation}\label{math:simple_biased_threshold}
@@ -205,9 +205,9 @@ Threshold values can be defined through different equations, considering differe
     \caption{Simple (biased) threshold}
 \end{equ}
 
-The first equation~\ref{math:simple_biased_threshold}, denoted as \(\mathcal{H}_{sbt}(A,\Delta)\), defines a simple biased threshold. In essence, without considering the bias, this equation implies that a vertex is labeled critical if, for all \(n\) agents with \(k\) paths each, \(\frac{1}{n}\) of their paths utilize this vertex at a specific time plus one additional path. The bias adjustment allows for the flexible inclusion of more or less critical vertices.
 
-The simplicity of the basic threshold equation makes it a general tool, but it lacks vertex-specific context. To address this limitation, we introduce a more sophisticated approach with the context-dependent threshold equation, \(\mathcal{H}_{bcdt}(V,T,A,\Delta)\). This threshold calculation takes into account the number of paths using a particular vertex at a specific time step (\(T\)) and the number of agents involved, providing a more precise evaluation of critical vertices. The equation incorporates the bias factor that allows a nuanced consideration.
+
+The simplicity of the basic threshold equation makes it a general tool, but it lacks vertex-specific context. To address this limitation, we introduce a more sophisticated approach with a context-dependent threshold in equation~\ref{math:contextdependant}. This threshold calculation takes into account the number of paths using a particular vertex at a specific time step (\(T\)) and the number of agents involved, providing a more precise evaluation of critical vertices. The equation incorporates a bias factor \(\Delta\) that is used for finetuning.
 
 \begin{equ}[H]
     \begin{equation}\label{math:contextdependant}
@@ -217,9 +217,9 @@ The simplicity of the basic threshold equation makes it a general tool, but it l
 \end{equ}
 
 
-\subsubsection{Eliminating paths using sums of heatmap value}
+\subsubsection{Eliminating paths using sums of heatmap values}
 
-In contrast to a vertex-oriented approach, which may label a path as "critical" even if it possesses critical attributes only on a single occurrence. An alternative strategy involves considering the scope of entire paths that may highlight conflict. The approach entails assigning a value to an entire path, facilitating comparison among paths. Specifically, we calculate this value for each path by summing the Global Heatmap values associated with its vertices. The approach is outlined in the following figure~\ref{fig:summed_heatmap_value_elimination}. 
+In contrast to a vertex-oriented approach, which may label a path as "critical" even if it possesses critical attributes only on a single occurrence. An alternative strategy involves considering the scope of entire paths that may highlight conflict. The approach entails assigning a value to an entire path by summing the Global Heatmap values associated with its vertices. The approach is outlined in figure~\ref{fig:summed_heatmap_value_elimination}. 
 
 \begin{figure}[H]
     \centering
@@ -227,14 +227,14 @@ In contrast to a vertex-oriented approach, which may label a path as "critical" 
     \includegraphics[width=\widthimg]{img/summed_heatmap_value.drawio.png}
 \end{figure}
 
-This approach tends to kill agents quite quickly when only a few paths are involved, this approach tends to be more efficient the more diverse \(\gamma\in\tau\) are. Futhermore, with one call, this approach tends to chunk a huge section of the paths. 
+This approach tends to kill agents quite quickly when only a few paths are involved. However, it tends to be more efficient the more diverse \(\gamma\in\tau\) are. Futhermore, with one call, this approach can chunk a significant portion of the paths. 
 
 
 \subsection{Using conflicts}
 
 We introduce a fourth approach that centers around \textbf{potential conflicts} to guide Path Elimination. In this method, for each agent and at every vertex along their path, we calculate the count of \textbf{potential conflicts}. This approach stands apart from the heatmap-based methods in a significant way: when an agent possesses a substantial number of paths, their individual paths do not significantly influence the Global Heatmap values, even if they have the potential to cause conflicts. However, in the Potential Conflict-based approach, every path is treated with equal weight.
 
-The encoding for the described approach is defined in the following listing~\ref{lst:conflict_based_path_elimination}.
+The encoding for the described approach is defined in Listing~\ref{lst:conflict_based_path_elimination}.
 
 
 \begin{minipage}[H]{\linewidth}
@@ -258,16 +258,16 @@ The encoding for the described approach is defined in the following listing~\ref
 \end{lstlisting}
 \end{minipage}
 
-In order to decide which paths has to be killed, we first need to denotes which paths can be killed, line~\ref{line:to_determine} labeling them with the predicate \(to\_determine/2\). \textbf{Potential conflicts} are determined through the rule at line~\ref{line:potential_conflict}. This rule identifies situations where two or more agents could potentially conflict at a given vertex and time. The following rule, line~\ref{line:path_composition} calculates the path composition of a path by counting the different \textbf{potential conflicts} composing it. Finally, lines~\ref{line:to_kill_set} and~\ref{line:maximize_to_kill} state that exactly \(n\) paths should be marked for elimination and aims to select the set of paths to eliminate that results in the highest \textbf{potential conflicts} sums. Note that \(n\) has been set arbitrarily to 5, but it can take any value.  
+In order to decide which paths have to be killed, we first need to identify which paths can be killed. Line~\ref{line:to_determine} labels paths with the predicate \(to\_determine/2\). \textbf{Potential conflicts} are determined through the rule at line~\ref{line:potential_conflict}. This rule identifies situations where two or more agents could potentially conflict at a given vertex and time. Rule at line~\ref{line:path_composition} calculates the number of \textbf{potential conflicts} composing it. Finally, lines~\ref{line:to_kill_set} and~\ref{line:maximize_to_kill} state that exactly \(n\) paths should be marked for elimination and aims to select the set of paths to eliminate that results in the highest \textbf{potential conflicts} sums. Note that \(n\) has been set arbitrarily to 5, but it can take any value.  
 
 \section{Path Selection}\label{sec:ps}
 
-As mentioned above, Path Selection tends to build a \(\tau'\), being a subcomponent of \(\tau\). We can describe two objectives for \(\tau'\).  
+As mentioned above, Path Selection tends to build a \(\tau' \leq \tau\). We can describe two objectives for \(\tau'\).  
 
-1). Building \(\tau'\) in order to create a plan. We can identify two kinds of plans; a valid plan \(\Pi\) as defined earlier in the background section~\ref{sec:background}, and a partial plan \(\hat{\Pi}\). A partial plan possesses the same attributes as a valid plan, except for its construction of the collection of paths, which is denoted as \((\pi_a)_{a \in A' \subset A}\), while a plan \(\Pi\) is represented as \((\pi_a)_{a \in A}\). By this means, \(\tau'\) has to be built such as each \(\gamma'\) composing \(\tau'\) has at most one path composing them. 
+1). Building \(\tau'\) in order to create a plan. We can identify two kinds of plans; a valid plan \(\Pi\) as defined earlier in the background section~\ref{sec:background}, and a partial plan \(\hat{\Pi}\). A partial plan possesses the same attributes as a valid plan, but only for a subset of the agents. This means that  for each \(\gamma' \in \tau', |\gamma'| \leq 1\). 
 
-2). Building \(\tau'\) in order to create a subgraph. We create a subgraph \(V',E'\) builded out of the paths in \(\tau'\). We have 
-\(V' = \{v \text{ }|\text{ } v \in vertices(\tau')\} \)  and \(V' = \{e \text{ }|\text{ } e \in edges(\tau')  \} \) where \(vertices(\tau)\) and \(vertices(\tau)\) respectively enumerate the vertices and edges of a given set of set of path \(\tau\). By this means, \(\tau'\) has to be builded such that each \(\gamma'\) composing \(\tau'\) has to be non-empty. 
+2). Building \(\tau'\) in order to create a subgraph. We create a subgraph \(V',E'\) build out of the paths in \(\tau'\). We have 
+\(V' = \{v \text{ }|\text{ } v \in vertices(\tau')\} \)  and \(E' = \{e \text{ }|\text{ } e \in edges(\tau')  \} \) where \(vertices(\tau)\) and \(vertices(\tau)\) respectively enumerate the vertices and edges of a given set of set of path \(\tau\). This means that  each \(\gamma' \in \tau', |\gamma'|  \geq 1 \). 
 
 
 \begin{figure}[H]
@@ -280,7 +280,7 @@ As mentioned above, Path Selection tends to build a \(\tau'\), being a subcompon
 
 \subsection{Towards a (partial) plan}
 
-In this section, we explain the method for achieving the first objective outlined above (as discussed in~\ref{sec:ps}). To summarize, the aim is to identify, for as many agents as possible, at most one conflict-free path (among paths of other agents) per agent. To achieve this, we consider the set of paths that have not been eliminated through Path Elimination. The corresponding encoding for this approach is provided in listing~\ref{lst:ps_encoding}.
+In this section, we explain the method for achieving the first objective outlined above. To summarize, the aim is to identify a partial plan \(\hat{\Pi}\) with the maximum amount of agents.  The corresponding encoding for this approach is provided in Listing~\ref{lst:ps_encoding}.
 
 \begin{minipage}[H]{\linewidth}
 \begin{lstlisting}[style=mystyle, caption={Building a conflict free \(\tau'\)}, label={lst:ps_encoding}]
@@ -291,20 +291,12 @@ In this section, we explain the method for achieving the first objective outline
     {selected_path(R,I) : possible_path(R,I) }1 :-  agent(R). |\label{line:selecting_candidate}|
 
     collision((R1,P1),(R2,P2),T) :- |\label{line:vertex_collision}|
-        R1 != R2, 
-        at(R1,P1,V,T), 
-        at(R2,P2,V,T),
-        selected_path(R1,P1),
-        selected_path(R2,P2).
+        R1 != R2, at(R1,P1,V,T), at(R2,P2,V,T),
+        selected_path(R1,P1), selected_path(R2,P2).
 
     collision((R1,P1),(R2,P2),T) :- |\label{line:edge_collision}|
-        R1 != R2, 
-        at(R1,P1,V1,T), 
-        at(R1,P1,V2,T+1), 
-        at(R2,P2,V2,T), 
-        at(R2,P2,V1,T+1),
-        selected_path(R1,P1),
-        selected_path(R2,P2).
+        R1 != R2, at(R1,P1,V1,T), at(R1,P1,V2,T+1), at(R2,P2,V2,T), 
+        at(R2,P2,V1,T+1), selected_path(R1,P1), selected_path(R2,P2).
     
     :- collision((R1,P1),(R2,P2),_), |\label{line:no_collision}|
         selected_path(R1,P1), 
@@ -316,22 +308,22 @@ In this section, we explain the method for achieving the first objective outline
 \end{lstlisting}
 \end{minipage}
 
-The encoding provided in listing~\ref{lst:ps_encoding} can be interpreted as follows: the initial step is to establish which paths are eligible for the output. Up to this step of Path Selection, paths could have been labeled as either \textbf{selected} or \textbf{killed}. For the other paths, line~\ref{line:possible_path} labels them as \(possible\_path/2\). They become candidates for the output. Then, line~\ref{line:selecting_candidate} selects paths from the candidates, ensuring that at most one path per agent is chosen for the output. Following this, lines~\ref{line:vertex_collision} and~\ref{line:edge_collision} define vertex and edge collisions, respectively, among the selected paths. The associated constraint specified in line~\ref{line:no_collision} ensures that the set of \textbf{selected paths} does not contain any collisions. Lastly, the optimization statement in line~\ref{line:more_agent} aims to maximize the number of \textbf{selected paths}, ensuring the selection of as many paths as possible.
+Up to this step of Path Selection, paths could have been labeled as either \textbf{selected} or \textbf{killed}. For the remaining paths, line~\ref{line:possible_path} labels them as \(possible\_path/2\). Then, line~\ref{line:selecting_candidate} selects paths from the candidates, ensuring that at most one path per agent is chosen for the output. Following this, lines~\ref{line:vertex_collision} and~\ref{line:edge_collision} define vertex and edge collisions, respectively, among the selected paths. The associated constraint specified in line~\ref{line:no_collision} ensures that the set of \textbf{selected paths} does not contain any collisions. Lastly, the optimization statement in line~\ref{line:more_agent} aims to maximize the number of \textbf{selected paths}, ensuring the selection of as many paths as possible.
 
 
 \subsection{Towards a subgraph}
 
 The second objective discussed in~\ref{sec:ps} can defined as a pre-processing for a MAPF algorithm. Contrary to the first objective, we require at least one path for each agent. To do so, multiple approaches can be used. By definition, the output of IPF can be used directly. We will, however, describe different approaches to select some paths per agent. 
 
-The approaches that we will described are based on the output of the encoding described in listing~\ref{lst:ps_encoding}.
-The objective is to populate the set of conflict-free paths with paths of agents involved in conflicts. There are two primary methods to identify missing paths:
+The approaches that we describe are based on the output of the encoding described in Listing~\ref{lst:ps_encoding}.
+The objective is to populate the set of conflict-free paths with paths of agents involved in conflicts. We define two primary approaches:
 
-\noindent\textbf{Utilizing Global Heatmaps:} The first approach involves using Global Heatmaps and similar approaches used in Path Elimination process. This can be done either by employing the Heatmaps computed during the Path Elimination process or by recalculating them using the possible paths issued from~\ref{lst:ps_encoding}  (or from IPF, if all paths have been eliminated)..
+\noindent\textbf{Utilizing Global Heatmaps:} The first approach involves using GH and similar approaches used in Path Elimination process. This can be done either by employing the Heatmaps computed during the Path Elimination process or by recalculating them using the possible paths issued from~\ref{lst:ps_encoding}  (or from IPF, if all paths have been eliminated)..
 
-\noindent\textbf{Path Conflict Composition:} The second approach relies on path conflict composition, as outlined in listing~\ref{lst:conflict_based_path_elimination}. Similarly to the heatmap approach, the path conflict composition can be derived either from the Path Elimination process or can be recomputed based on the possible paths obtained through path selection.
+\noindent\textbf{Path Conflict Composition:} The second approach relies on path conflict composition, as outlined in Listing~\ref{lst:conflict_based_path_elimination}. Similarly to the heatmap approach, the path conflict composition can be derived either from the Path Elimination process or can be recomputed based on the possible paths obtained through path selection.
 
 
-We then convert the different paths into the new vertices and edges \(V'\) and \(E'\) using the following encoding~\ref{lst:converting_paths_to_subgraph}.
+We then convert the different paths into the new vertices and edges using the following encoding~\ref{lst:converting_paths_to_subgraph}.
 
 \begin{minipage}[H]{\linewidth}
 \begin{lstlisting}[style=mystyle, caption={Converting path to subgraph}, label={lst:converting_paths_to_subgraph}]
@@ -346,7 +338,7 @@ We then convert the different paths into the new vertices and edges \(V'\) and \
 
 \subsection{Evaluating approaches}
 
-We introduced different Path Elimination approaches coupled with Path  Selection, in order to evaluate them, we introduce four metrics. These metrics require a reference to compare Path Selection efficiency. We then introduce a ``brute-force'' Path Selection approach that computes what could be defined as the best output possible for Path Selection\footnote{The best output possible if we looking a partial plan \(\hat{\Pi}\) as close possible to a complete valid plan \(\Pi\)}. ``Brute-force'' PS approach determine which paths to kill to obtain a conflict-free set of paths. In other words, Path Selection tends to approximate of the ``Brute-force'' PS approach.  This approach is not used in practice because of its huge computation time.
+We introduced different Path Elimination approaches coupled with Path  Selection, in order to evaluate them, we introduce four metrics. These metrics require a reference to compare Path Selection efficiency. We then introduce a ``brute-force'' Path Selection approach that computes what could be defined as the best output possible for Path Selection\footnote{In our case, the best output possible is a partial plan \(\hat{\Pi}\) as close as possible to a complete valid plan \(\Pi\)}.  This approach is not used in practice because of its huge computation time.
 
 
 \begin{minipage}[H]{\linewidth}
@@ -388,10 +380,9 @@ We introduced different Path Elimination approaches coupled with Path  Selection
 \end{lstlisting}
 \end{minipage}
 
-The major reason for the long computation time required by the ``brute-force'' PS approach is the identification of vertex and edge conflicts. Contrary to the MAPF encoding presented in background section~\ref{sec:background} where the identification of both edge and vertex collisions is achieved with a linear computational complexity. On the other hand, within the "brute-force" encoding, conflicts are identified in a quadratic complexity due to the manner in which paths are identified using the \((R,I)\) tuple.
+The major reason for the long computation time required by the ``brute-force'' PS approach is the identification of vertex and edge conflicts.
 
-
-We introduce metrics to assess and compare the outcomes of various Path Selection approaches. We will compare the results of approaches to the brut-force output. To do so, we introduce two functions \(brutforce\) and \(approach\) which both take as argument a predicate name and return the associated set of facts. For instance, \(approach(selected\_path/2)\) returns all the selected paths of the approach. Note that we could change the approach \(bruteforce\) by another to evaluate difference between approaches results.
+We introduce metrics to assess and compare the outcomes of various Path Selection approaches. We will compare the results of approaches to the brut-force output. To do so, we introduce two functions \(brutforce\) and \(approach\) which both take as argument a predicate name and return the associated set of facts. For instance, \(approach(selected\_path/2)\) returns all the selected paths of the approach in a tuple form.
 
 \begin{equ}[H]
     \begin{equation}\label{math:relevance}
@@ -409,7 +400,7 @@ We introduce metrics to assess and compare the outcomes of various Path Selectio
 \caption{Absolute Relevance}
 \end{equ}
 
-\textbf{Absolute Relevance} evaluate proportion conflict-free agents found by the approach.
+\textbf{Absolute Relevance} evaluates the proportion of conflict-free agents found by the approach.
 
 
 \begin{equ}[H]
@@ -423,7 +414,7 @@ We introduce metrics to assess and compare the outcomes of various Path Selectio
 
 \begin{equ}[H]
     \begin{equation}\label{math:chunk_proportion}
-        precision = \frac{|approach(path\_killed/2)|}{|brutforce(possible\_path/2)|}
+        chunk_proportion = \frac{|approach(path\_killed/2)|}{|brutforce(possible\_path/2)|}
     \end{equation}
 \caption{Chunk Proportion}
 \end{equ}
