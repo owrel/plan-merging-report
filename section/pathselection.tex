@@ -34,7 +34,7 @@ Heatmap is about projecting likelihood of presence of an agents on vertices at e
 
 This representation produces critical vertices for an agent, where higher values correspond to a greater likelihood of vertex utilization. On the other hand, the mean heatmap value associated with \(\gamma\) serves as an indicator of path diversity, with elevated values signifying a low level of path diversity.
 
-we derive a \textbf{Global Heatmap} (GH) through the aggregation of all Individual Heatmaps. It is important to note that Global Heatmaps, in this context, no longer serve as a direct indicator of the likelihood of presence but instead an indicator of ``usage of vertices'' .
+We derive a \textbf{Global Heatmap} (GH) through the aggregation of all Individual Heatmaps. It is important to note that Global Heatmaps, in this context, no longer serve as a direct indicator of the likelihood of presence but instead an indicator of ``usage of vertices'' .
 
 A Global Heatmap \(\Phi\) of \(\tau\) is formalized in the following equation~\ref{math:global_heatmap}. As for Individual Heatmaps, a Global Heatmap value of \(\Phi\) is computed given a vertex \(v\) and a time step \(t\).  
 
@@ -114,7 +114,7 @@ We then present three approaches for identifying potentially conflicting paths i
 
 \subsubsection{Eliminating paths using unique heatmap value}
 
-One straightforward approach involves ordering all possible assignments of \((v, t)\) within a given \(\tau\) based on their global heatmap values. We classify the top \(k\) vertices as ``critical''.Which can then be used as reference points for path elimination based on various criteria. We can identify which paths pass through critical vertices using the following rule:
+One straightforward approach involves ordering all possible assignments of \((v, t)\) within a given \(\tau\) based on their global heatmap values. We classify the top \(k\) vertices as ``critical''. Which can then be used as reference points for path elimination based on various criteria. We can identify which paths pass through critical vertices using the following rule:
 
 \begin{minipage}[H]{\linewidth}
 \begin{lstlisting}[style=mystyle]
@@ -184,7 +184,7 @@ The principle is simple, if the Global Heatmap value of a vertex at a specific t
 
 \begin{equ}[H]
     \begin{equation}\label{math:critical_vertex_threshold}
-        critical\_vertices(\tau) = \{(v,t) | \Phi(\tau,v,t) > \mathcal{H}, (v,t) \in \mathcal{F}(\tau) \} 
+        critical\_vertices(\tau) = \{(v,t) | \Phi(\tau,v,t) > \mathcal{H}(v,t) \in \mathcal{F}(\tau) \} 
     \end{equation}
     \caption{Identifying critical vertices using threshold}
 \end{equ}

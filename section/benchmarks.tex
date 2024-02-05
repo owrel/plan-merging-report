@@ -42,7 +42,7 @@ The benchmark were run on a Intel Core i7-4470 @ 3.60ghz with 16GiB of RAM with 
 
 \input{tables/tbl_computation_time.tex}
 
- Table \ref{tbl:path_computation_time} shows the disparity of efficiency among Plan Merging approaches. Particularly noteworthy is the \textbf{NShSg} approach, which stands out as the fastest among the tested methods. As expected, longer computation time is observed for approaches using additional paths in approaches like \textbf{AStSg}, \textbf{AStSgPc}, and \textbf{AStPc}.
+ Table \ref{tbl:path_computation_time} shows the disparity of efficiency among Plan Merging approaches. Particularly noteworthy is the \textbf{AShSg} approach, which stands out as the fastest among the tested methods. As expected, longer computation time is observed for approaches using additional paths in approaches like \textbf{AStSg}, \textbf{AStSgPc}, and \textbf{AStPc}.
 It appears that precomputed paths approaches often times out or, more likely, produces unsat results. This can be attributed to way the paths are forced, described in our methodology, inevitably induces collision. Figure~\ref{fig:precomputed_path_conflict} illustrates a scenario where conflict(s) are inevitable using the pre-computed paths approach.
 In all cases, the witness approach seems to be a faster approach while providing for each instances a solution.
 \begin{figure}[H]
@@ -56,7 +56,7 @@ With table~\ref{tbl:path_proportion}, we focus on the. "\# Fully solved instance
 
 \input{tables/tbl_path_proportion.tex}
 
-This table confirms result concluded with table~\ref{tbl:path_proportion}. Further emphasizing the effectiveness of the \textbf{NShSg} approach, which, among other, have the highest number of fully solved instances.  It also confirms that pre-computed paths approach do not perform well since it register the lowest score in terms of number of fully solved instances and in terms of expected proportion of agent with a path.
+This table confirms result concluded with table~\ref{tbl:path_proportion}. Further emphasizing the effectiveness of the \textbf{AShSg} approach, which, among other, have the highest number of fully solved instances.  It also confirms that pre-computed paths approach do not perform well since it register the lowest score in terms of number of fully solved instances and in terms of expected proportion of agent with a path.
 The data also indicates that combining Diamond and Corridor extensions does not appear to enhance the solving process. In fact, it even results in worse results compared to similar approaches without these extensions, as evidenced by \textbf{NShSgCD} compared to \textbf{NShSg} and \textbf{AStSgCD} compared to \textbf{AStSg}.
 Furthermore, we can notice multiple approaches that are providing really high expected proportion of fully solved instance; \textbf{NStSg}, \textbf{NStSgCD}, \textbf{NStSgD}, \textbf{NStSgC} and \textbf{AStSg}.
 Additionally, multiple approaches demonstrate high expected proportions of fully solved instances, including \textbf{NStSg}, \textbf{NStSgCD}, \textbf{NStSgD}, \textbf{NStSgC}, and \textbf{AStSg}.
@@ -79,7 +79,7 @@ Plan Merging approaches can provide a partial solution faster than the base MAPF
 
 \subsubsection{Detailed performance}
 
-From the best approach \textbf{NShSg} outlined by the previous result, we provide in Table~\ref{tbl:approach_decomposition}, the total time and the proportion of each steps composing the approach.
+From the best approach \textbf{AShSg} outlined by the previous result, we provide in Table~\ref{tbl:approach_decomposition}, the total time and the proportion of each steps composing the approach.
 
 \begin{table}[]
     \centering
@@ -87,7 +87,7 @@ From the best approach \textbf{NShSg} outlined by the previous result, we provid
     \begin{tabular}{@{}llllll@{}}
     \toprule
     \multicolumn{1}{l|}{\multirow{2}{*}{Step Name}} & \multicolumn{3}{c|}{Total time} & \multicolumn{2}{c}{\% of the process} \\ \cmidrule(l){2-6}  
-    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Id.} & \multicolumn{1}{c}{NShSg} & \multicolumn{1}{c|}{Witness} & \multicolumn{1}{c}{AShSg} & Witness \\ \midrule
+    \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Id.} & \multicolumn{1}{c}{AShSg} & \multicolumn{1}{c|}{Witness} & \multicolumn{1}{c}{AShSg} & Witness \\ \midrule
     IPF & \cellcolor{lightgrey} & 49 & 41  &7\% &10\%  \\
     Heatmaps Computation & \cellcolor{lightgrey} & 14 &  - &2\% & - \\
     Summed Heatmap per Path & \cellcolor{lightgrey} & 0 &  - &0\% & - \\

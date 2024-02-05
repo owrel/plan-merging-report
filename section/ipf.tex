@@ -164,13 +164,9 @@ A nice property that comes with this approach is that since we use model enumera
 
 Base IPF computing reduces computation time significantly; given the way Clingo works, decomposing the problem into one agent at a time and reusing grounding works is faster than trying to solve multiple problems at once. It does, however, compute random paths. In order to compute the shortest paths, we can use the optional predicates described in list~\ref{list:instance_format_explanation_part2}. Assumptions allow us to force \(goal/2\) predicate to be reached a specific time step,  We can then change the goal position assumption and force it to be reached at a certain time step instead of at the horizon. We can use the same principle to compute paths of different lengths for one agent; this requires an additional solving and translation step.
 
-Furthermore, in this process, we can compute additional paths with a modified time step associated with the goal. This addition enables agents to reach their destination xx time steps later than the originally defined duration. This strategy proves valuable when a limited number of paths are computed, as it provides the IPF solver with extra possibilities to generate additional paths.
+Furthermore, in this process, we can compute additional paths with a modified time step associated with the goal. This addition enables agents to reach their destination \(x\) time steps later than the originally defined duration. This strategy proves valuable when a limited number of paths are computed, as it provides the IPF solver with extra possibilities to generate additional paths.
 
 Given the way base IPF computation works, it seems difficult to assign different properties to the paths that depends on other paths. Properties, such as, length, number of bends can easily be achieve. On the other hand, diversity and distance seems difficult. To achieve a similar result, we can request a large number of paths and create a subset out of them that satisfy chosen properties. 
-
-
-
-
 
 
 \subsection{Filters}
